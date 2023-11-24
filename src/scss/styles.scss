@@ -20,22 +20,3 @@ body {
   background-color: var(--dracula-background);
   padding: 2rem;
 }
-
-input {
-  background-color: var(--dracula-current-line) !important;
-  color: var(--dracula-foreground) !important;
-  border: 1px solid var(--dracula-comment) !important;
-  &::placeholder {
-    color: var(--dracula-comment) !important;
-  }
-}
-
-button {
-  background-color: var(--dracula-current-line) !important;
-  color: var(--dracula-foreground) !important;
-  border: 1px solid var(--dracula-comment) !important;
-  &:hover {
-    background-color: var(--dracula-comment) !important;
-    color: var(--dracula-background) !important;
-  }
-}
