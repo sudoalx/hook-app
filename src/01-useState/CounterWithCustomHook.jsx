@@ -13,21 +13,21 @@ const CounterWithCustomHook = () => {
           <button
             type="button"
             className="btn btn-warning"
-            onClick={() => decrement()}
+            onClick={() => decrement(1)}
           >
             -1
           </button>
           <button
             type="button"
             className="btn btn-danger"
-            onClick={() => reset()}
+            onClick={() => reset(1)}
           >
             Reset
           </button>
           <button
             type="button"
             className="btn btn-success"
-            onClick={() => increment()}
+            onClick={() => increment(1)}
           >
             +1
           </button>
