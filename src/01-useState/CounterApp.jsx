@@ -16,14 +16,27 @@ const CounterApp = () => {
       <button
         type="button"
         className="btn btn-warning"
-        onClick={() => setCounter(counter1 - 1)}
+        onClick={() =>
+          setCounter({
+            counter1: counter1 - 1,
+            counter2: counter2 + 1,
+            counter3: counter3 - 1,
+          })
+        }
       >
         -1
       </button>
       <button
         type="button"
         className="btn btn-danger"
-        onClick={() => setCounter(0)}
+        onClick={() =>
+          setCounter({
+            ...state,
+            counter1: 10,
+            counter2: 20,
+            counter3: 30,
+          })
+        }
       >
         Reset
       </button>
@@ -32,8 +45,9 @@ const CounterApp = () => {
         className="btn btn-success"
         onClick={() =>
           setCounter({
-            ...state,
             counter1: counter1 + 1,
+            counter2: counter2 - 1,
+            counter3: counter3 + 1,
           })
         }
       >
