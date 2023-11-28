@@ -2,7 +2,12 @@ import { useEffect } from "react";
 
 const Message = () => {
   useEffect(() => {
-    console.log("Component mounted");
+    const onMouseMove = ({ x, y }) => {
+      const coords = { x, y };
+      console.log(coords);
+      // console.log(":)");
+    };
+    window.addEventListener("mousemove", onMouseMove);
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       console.log("Component unmounted");
