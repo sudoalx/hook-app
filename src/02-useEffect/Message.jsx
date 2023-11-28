@@ -4,6 +4,7 @@ const Message = () => {
   useEffect(() => {
     console.log("Component mounted");
     return () => {
+      window.removeEventListener("mousemove", onMouseMove);
       console.log("Component unmounted");
     };
   }, []);
