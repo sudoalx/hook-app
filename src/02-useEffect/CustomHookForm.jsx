@@ -2,12 +2,11 @@ import Message from "./Message";
 import { useForm } from "../hooks/useForm";
 
 const CustomHookForm = () => {
-  const { formState, onInputChange, onFormReset, username, email, password } =
-    useForm({
-      username: "",
-      email: "",
-      password: "",
-    });
+  const { onInputChange, onFormReset, username, email, password } = useForm({
+    username: "",
+    email: "",
+    password: "",
+  });
 
   return (
     <>
