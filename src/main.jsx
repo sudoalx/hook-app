@@ -7,13 +7,15 @@ import CounterApp from "./01-useState/CounterApp";
 import CounterWithCustomHook from "./01-useState/CounterWithCustomHook";
 import SimpleForm from "./02-useEffect/SimpleForm";
 import CustomHookForm from "./02-useEffect/CustomHookForm";
+import MultipleCustomHooks from "./03-examples/MultipleCustomHooks";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <React.Fragment>
     {/* <HooksApp /> */}
     {/* <CounterApp /> */}
     {/* <CounterWithCustomHook /> */}
     {/* <SimpleForm /> */}
-    <CustomHookForm />
-  </React.StrictMode>
+    {/* <CustomHookForm /> */}
+    <MultipleCustomHooks />
+  </React.Fragment>
 );
