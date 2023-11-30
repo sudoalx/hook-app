@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import useCounter from "../hooks/useCounter";
 import { LoadingCard } from "./components/LoadingCard";
@@ -6,6 +7,8 @@ import { Card } from "./components/Card";
 const MultipleCustomHooks = () => {
   const max = 826;
   const { counter, increment, decrement } = useCounter(1, max);
+  const [increaseValue, setIncreaseValue] = useState(1);
+  const [decreaseValue, setDecreaseValue] = useState(1);
   const { data, isLoading, hasError } = useFetch(
     `https://rickandmortyapi.com/api/character/${counter}`
   );
@@ -31,6 +34,10 @@ const MultipleCustomHooks = () => {
           increment={increment}
           counter={counter}
           isLoading={isLoading}
+          increaseValue={increaseValue}
+          decreaseValue={decreaseValue}
+          setIncreaseValue={setIncreaseValue}
+          setDecreaseValue={setDecreaseValue}
         />
       )}
     </>
