@@ -9,6 +9,7 @@ import SimpleForm from "./02-useEffect/SimpleForm";
 import CustomHookForm from "./02-useEffect/CustomHookForm";
 import MultipleCustomHooks from "./03-examples/MultipleCustomHooks";
 import { FocusScreen } from "./04-useRef/FocusScreen";
+import Layout from "./03-examples/Layout";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <SimpleForm /> */}
     {/* <CustomHookForm /> */}
     {/* <MultipleCustomHooks /> */}
-    <FocusScreen />
+    {/* <FocusScreen /> */}
+    <Layout />
   </React.Fragment>
 );
