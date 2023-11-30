@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { CustomValues } from "./SkipValues";
+import { SkipValues } from "./SkipValues";
 import { useState } from "react";
 
 export const Card = ({

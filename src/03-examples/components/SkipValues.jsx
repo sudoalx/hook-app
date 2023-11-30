@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-export const CustomValues = ({
+export const SkipValues = ({
   increaseValue,
   decreaseValue,
   setIncreaseValue,
@@ -36,7 +36,7 @@ export const CustomValues = ({
   );
 };
 
-CustomValues.propTypes = {
+SkipValues.propTypes = {
   increaseValue: PropTypes.number.isRequired,
   decreaseValue: PropTypes.number.isRequired,
   setIncreaseValue: PropTypes.func.isRequired,
