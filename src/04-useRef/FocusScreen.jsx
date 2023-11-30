@@ -1,4 +1,4 @@
-export const FosusScreen = () => {
+export const FocusScreen = () => {
   return (
     <>
       <h1>Focus Screen</h1>
