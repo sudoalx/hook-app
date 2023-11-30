@@ -8,6 +8,7 @@ import CounterWithCustomHook from "./01-useState/CounterWithCustomHook";
 import SimpleForm from "./02-useEffect/SimpleForm";
 import CustomHookForm from "./02-useEffect/CustomHookForm";
 import MultipleCustomHooks from "./03-examples/MultipleCustomHooks";
+import { FosusScreen } from "./04-useRef/FocusScreen";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <CounterWithCustomHook /> */}
     {/* <SimpleForm /> */}
     {/* <CustomHookForm /> */}
-    <MultipleCustomHooks />
+    {/* <MultipleCustomHooks /> */}
+    <FosusScreen />
   </React.Fragment>
 );
