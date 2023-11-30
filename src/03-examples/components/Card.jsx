@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { SkipValues } from "./SkipValues";
-import { useState } from "react";
 
 export const Card = ({
   image,
@@ -10,9 +9,11 @@ export const Card = ({
   increment,
   counter,
   isLoading,
+  increaseValue,
+  decreaseValue,
+  setIncreaseValue,
+  setDecreaseValue,
 }) => {
-  const [increaseValue, setIncreaseValue] = useState(1);
-  const [decreaseValue, setDecreaseValue] = useState(1);
   const handleDeacreaseValue = (e) => {
     e.target.value > 0 && setDecreaseValue(parseInt(e.target.value));
   };
@@ -30,6 +31,7 @@ export const Card = ({
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{species}</p>
         </div>
+
         <div className="d-grid gap-1 m-1">
           <button
             className="btn btn-primary"
@@ -59,7 +61,7 @@ export const Card = ({
           />
         </div>
       </div>
-      {/* TODO: move useState to parent component to keep the last value entered on component refresh */}
+
       <SkipValues
         decreaseValue={decreaseValue}
         increaseValue={increaseValue}
@@ -78,4 +80,8 @@ Card.propTypes = {
   increment: PropTypes.func.isRequired,
   counter: PropTypes.number.isRequired,
   isLoading: PropTypes.bool.isRequired,
+  increaseValue: PropTypes.number.isRequired,
+  decreaseValue: PropTypes.number.isRequired,
+  setIncreaseValue: PropTypes.func.isRequired,
+  setDecreaseValue: PropTypes.func.isRequired,
 };
