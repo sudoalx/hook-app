@@ -59,6 +59,7 @@ export const Card = ({
           />
         </div>
       </div>
+      {/* TODO: move useState to parent component to keep the last value entered on component refresh */}
       <SkipValues
         decreaseValue={decreaseValue}
         increaseValue={increaseValue}
