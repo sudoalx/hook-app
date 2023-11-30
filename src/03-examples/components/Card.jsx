@@ -59,7 +59,7 @@ export const Card = ({
           />
         </div>
       </div>
-      <CustomValues
+      <SkipValues
         decreaseValue={decreaseValue}
         increaseValue={increaseValue}
         setDecreaseValue={handleDeacreaseValue}
