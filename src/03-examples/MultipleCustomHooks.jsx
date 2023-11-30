@@ -1,13 +1,17 @@
 import useFetch from "../hooks/useFetch";
 import useCounter from "../hooks/useCounter";
+import { useState } from "react";
 
 const MultipleCustomHooks = () => {
-  const { counter, increment, decrement } = useCounter(1);
+  const max = 826;
+  const { counter, increment, decrement } = useCounter(1, max);
   const { data, isLoading, hasError } = useFetch(
     `https://rickandmortyapi.com/api/character/${counter}`
   );
-
   const { name, species, image } = !!data && data;
+
+  const [increaseValue, setIncreaseValue] = useState(1);
+  const [decreaseValue, setDecreaseValue] = useState(1);
 
   return (
     <>
@@ -36,7 +40,7 @@ const MultipleCustomHooks = () => {
                 className="btn btn-primary"
                 type="button"
                 disabled={isLoading}
-                onClick={() => decrement(1)}
+                onClick={() => decrement(decreaseValue)}
               >
                 Previous
               </button>
@@ -44,11 +48,50 @@ const MultipleCustomHooks = () => {
                 className="btn btn-primary"
                 type="button"
                 disabled={isLoading}
-                onClick={() => increment(1)}
+                onClick={() => increment(increaseValue)}
               >
                 Next
               </button>
+              <label htmlFor="counter" className="form-label">
+                Current counter value
+              </label>
+              <input
+                type="number"
+                className="form-control text-center"
+                id="counter"
+                value={counter}
+                readOnly
+              />
             </div>
+          </div>
+          <div className="d-grid gap-1 m-1 text-center">
+            <label htmlFor="counter" className="form-label">
+              Increment by
+            </label>
+            <input
+              type="number"
+              className="form-control text-center"
+              id="counter"
+              value={increaseValue}
+              onChange={(e) => {
+                e.target.value > 0 &&
+                  setIncreaseValue(parseInt(e.target.value));
+              }}
+            />
+
+            <label htmlFor="counter" className="form-label">
+              Decrement by
+            </label>
+            <input
+              type="number"
+              className="form-control text-center"
+              id="counter"
+              value={decreaseValue}
+              onChange={(e) => {
+                e.target.value > 0 &&
+                  setDecreaseValue(parseInt(e.target.value));
+              }}
+            />
           </div>
         </div>
       )}
