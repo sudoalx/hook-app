@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { SkipValues } from "./SkipValues";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export const Card = ({
   image,
@@ -14,12 +15,21 @@ export const Card = ({
   setIncreaseValue,
   setDecreaseValue,
 }) => {
+  const sRef = useRef();
+  const [boxSize, setBoxSize] = useState({ width: 0, height: 0 });
+  useLayoutEffect(() => {
+    const { height, width } = sRef.current.getBoundingClientRect();
+    setBoxSize({ height, width });
+  }, [name]);
+
   const handleDeacreaseValue = (e) => {
     e.target.value > 0 && setDecreaseValue(parseInt(e.target.value));
   };
+
   const handleIncreaseValue = (e) => {
     e.target.value > 0 && setIncreaseValue(parseInt(e.target.value));
   };
+
   return (
     <div
       className="d-flex justify-content-center align-items-center flex-column"
@@ -29,7 +39,9 @@ export const Card = ({
         <img src={image} className="card-img-top img-fluid" alt={name} />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
-          <p className="card-text">{species}</p>
+          <p ref={sRef} className="card-text">
+            {species}
+          </p>
         </div>
 
         <div className="d-grid gap-1 m-1">
@@ -61,6 +73,7 @@ export const Card = ({
           />
         </div>
       </div>
+      <code> {JSON.stringify(boxSize)} </code>
 
       <SkipValues
         decreaseValue={decreaseValue}
