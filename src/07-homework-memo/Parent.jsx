@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Child } from "./Child";
 
 export const Parent = () => {
-  const nums = [2, 4, 6, 8, 10];
+  const nums = [2, 4, 6, 8, 10, 100];
   const [value, setValue] = useState(0);
 
-  const increase = (num) => {
-    setValue(value + num);
-  };
+  const increase = useCallback((num) => {
+    setValue((value) => value + num);
+  }, []);
 
   return (
     <div>
@@ -19,7 +19,6 @@ export const Parent = () => {
       {nums.map((n) => (
         <Child key={n} num={n} increase={increase} />
       ))}
-      {/* <Child /> */}
     </div>
   );
 };

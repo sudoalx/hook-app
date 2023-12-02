@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const Child = ({ num, increase }) => {
+export const Child = React.memo(({ num, increase }) => {
   console.log("Child component rendered");
 
   return (
@@ -9,7 +9,7 @@ export const Child = ({ num, increase }) => {
       {num}
     </button>
   );
-};
+});
 
 Child.propTypes = {
   num: PropTypes.number.isRequired,
