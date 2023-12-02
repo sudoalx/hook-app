@@ -13,6 +13,7 @@ import Layout from "./05-useLayoutEffect/Layout";
 import { Memorize } from "./06-memos/Memorize";
 import { MemoHook } from "./06-memos/MemoHook";
 import { CallbackHook } from "./06-memos/CallbackHook";
+import { Parent } from "./07-homework-memo/Parent";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
@@ -26,6 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <Layout /> */}
     {/* <Memorize /> */}
     {/* <MemoHook /> */}
-    <CallbackHook />
+    {/* <CallbackHook /> */}
+    <Parent />
   </React.Fragment>
 );
