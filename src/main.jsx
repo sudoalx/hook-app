@@ -14,6 +14,9 @@ import { Memorize } from "./06-memos/Memorize";
 import { MemoHook } from "./06-memos/MemoHook";
 import { CallbackHook } from "./06-memos/CallbackHook";
 import { Parent } from "./07-homework-memo/Parent";
+// import "./08-useReducer/intro-reducer";
+
+import { TodoApp } from "./08-useReducer/TodoApp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
@@ -28,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     {/* <Memorize /> */}
     {/* <MemoHook /> */}
     {/* <CallbackHook /> */}
-    <Parent />
+    {/* <Parent /> */}
+    <TodoApp />
   </React.Fragment>
 );
