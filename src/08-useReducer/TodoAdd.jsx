@@ -1,23 +1,26 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useForm } from "../hooks/useForm";
 
 export const TodoAdd = ({ handleNewTodo }) => {
-  const [description, setDescription] = useState("");
+  const { description, formState, onInputChange, onFormReset } = useForm({
+    id: "",
+    description: "",
+    done: false,
+  });
   return (
     <form>
       <input
         type="text"
-        name="todo"
+        name="description"
         className="form-control mb-2 bg-dark text-white"
         autoComplete="off"
         placeholder="New Todo..."
-        onChange={({ target }) => {
-          setDescription(target.value);
-        }}
+        value={description}
+        onChange={onInputChange}
       />
       <button
         type="submit"
-        className="btn btn-outline-primary mt-1"
+        className="btn btn-outline-primary m-1"
         onClick={(e) => {
           e.preventDefault();
           if (description.trim().length <= 1) return;
@@ -27,6 +30,7 @@ export const TodoAdd = ({ handleNewTodo }) => {
             done: false,
           };
           handleNewTodo(newTodo);
+          onFormReset();
         }}
       >
         Add
