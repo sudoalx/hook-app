@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { useFetch } from "../hooks";
-import { useCounter } from "../hooks";
+import { useFetch, useCounter } from "../hooks";
 import { LoadingCard } from "../03-examples/components/LoadingCard";
 import { Card } from "../03-examples/components/Card";
 
