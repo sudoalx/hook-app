@@ -17,7 +17,16 @@ const initialState = [
 ];
 
 export const TodoApp = () => {
-  const [todos, dispatchTodo] = useReducer(todoReducer, initialState);
+  const init = () => {
+    return JSON.parse(localStorage.getItem("todos") || []);
+  };
+
+  const [todos, dispatchTodo] = useReducer(todoReducer, initialState, init);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const handleNewTodo = (newTodo) => {
     console.log(newTodo);
   };
