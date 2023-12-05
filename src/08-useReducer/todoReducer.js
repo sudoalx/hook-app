@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 export const todoReducer = (initialState, action) => {
     switch (action.type) {
         case '[TODO] Add Todo':
@@ -9,4 +10,14 @@ export const todoReducer = (initialState, action) => {
         default:
             return initialState
     }
+}
+
+todoReducer.propTypes = {
+    initialState: PropTypes.array.isRequired,
+    action: PropTypes.object.isRequired
+}
+
+todoReducer.defaultProps = {
+    initialState: [],
+    action: {}
 }
