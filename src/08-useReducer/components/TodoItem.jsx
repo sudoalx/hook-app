@@ -1,18 +1,27 @@
 import PropTypes from "prop-types";
 
-export const TodoItem = ({ todo, onRemoveTodo }) => {
-  const { id, description } = todo;
+export const TodoItem = ({ todo, onRemoveTodo, onToggleTodoStatus }) => {
+  const { id, description, done } = todo;
 
   return (
     <li
       key={id}
-      className="list-group-item d-flex justify-content-between align-items-center bg-dark text-white"
+      style={{ cursor: "pointer" }}
+      onClick={() => onToggleTodoStatus(id)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          onToggleTodoStatus(id);
+        }
+      }}
+      tabIndex={0}
+      className={`list-group-item d-flex justify-content-between align-items-center bg-dark text-white`}
     >
-      <span>{description}</span>
+      <span className={`text-decoration-${done ? "line-through" : "none"}`}>
+        {description}
+      </span>
       <div className="btn-group">
-        <button className="btn btn-success">🗸</button>
-        <button className="btn btn-danger" onClick={() => onRemoveTodo(id)}>
-          ⛌
+        <button className="btn btn-danger" onClick={() => onRemoveTodo?.(id)}>
+          🗑
         </button>
       </div>
     </li>
@@ -22,4 +31,5 @@ export const TodoItem = ({ todo, onRemoveTodo }) => {
 TodoItem.propTypes = {
   todo: PropTypes.object.isRequired,
   onRemoveTodo: PropTypes.func.isRequired,
+  onToggleTodoStatus: PropTypes.func.isRequired,
 };
