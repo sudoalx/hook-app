@@ -32,23 +32,39 @@ export const TodoApp = () => {
     dispatchTodo(action);
   };
 
+  const handleToggleTodoStatus = (todoId) => {
+    const action = {
+      type: "[TODO] Toggle Todo",
+      payload: todoId,
+    };
+    dispatchTodo(action);
+  };
+
   return (
     <>
       <h1>TodoApp</h1>
       <div className="row">
         <div className="col-7">
-          <h4 className="text-start">Todo: 5</h4>
+          <h4 className="text-start text-danger">
+            Pending todos: {todos.filter((todo) => !todo.done).length}
+          </h4>
           <hr />
         </div>
         <div className="col-5">
-          <h4 className="text-end">Done: 5</h4>
+          <h4 className="text-end text-success">
+            Done: {todos.filter((todo) => todo.done).length}
+          </h4>
           <hr />
         </div>
       </div>
 
       <div className="row">
         <div className="col-7">
-          <TodoList todos={todos} onRemoveTodo={handleRemoveTodo} />
+          <TodoList
+            todos={todos}
+            onRemoveTodo={handleRemoveTodo}
+            onToggleTodoStatus={handleToggleTodoStatus}
+          />
         </div>
 
         <div className="col-5">
