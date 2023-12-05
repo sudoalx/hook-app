@@ -38,14 +38,12 @@ export const useTodos = () => {
         dispatchTodo(action);
     };
 
-    const pendingTodos = todos.filter((todo) => !todo.done).length;
-    const completedTodos = todos.filter((todo) => todo.done).length;
     return {
         handleNewTodo,
         handleRemoveTodo,
         handleToggleTodoStatus,
-        pendingTodos,
-        completedTodos,
+        pendingTodos: todos.filter((todo) => !todo.done).length,
+        completedTodos: todos.filter((todo) => todo.done).length,
         todos
     }
 }
