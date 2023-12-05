@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "./scss/styles.scss";
 import * as bootstrap from "bootstrap";
 import HooksApp from "./HooksApp";
@@ -17,21 +18,25 @@ import { Parent } from "./07-homework-memo/Parent";
 // import "./08-useReducer/intro-reducer";
 
 import { TodoApp } from "./08-useReducer/TodoApp";
+import { MainApp } from "./09-useContext/MainApp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.Fragment>
-    {/* <HooksApp /> */}
-    {/* <CounterApp /> */}
-    {/* <CounterWithCustomHook /> */}
-    {/* <SimpleForm /> */}
-    {/* <CustomHookForm /> */}
-    {/* <MultipleCustomHooks /> */}
-    {/* <FocusScreen /> */}
-    {/* <Layout /> */}
-    {/* <Memorize /> */}
-    {/* <MemoHook /> */}
-    {/* <CallbackHook /> */}
-    {/* <Parent /> */}
-    <TodoApp />
-  </React.Fragment>
+  <BrowserRouter>
+    <React.Fragment>
+      {/* <HooksApp /> */}
+      {/* <CounterApp /> */}
+      {/* <CounterWithCustomHook /> */}
+      {/* <SimpleForm /> */}
+      {/* <CustomHookForm /> */}
+      {/* <MultipleCustomHooks /> */}
+      {/* <FocusScreen /> */}
+      {/* <Layout /> */}
+      {/* <Memorize /> */}
+      {/* <MemoHook /> */}
+      {/* <CallbackHook /> */}
+      {/* <Parent /> */}
+      {/* <TodoApp /> */}
+      <MainApp />
+    </React.Fragment>
+  </BrowserRouter>
 );
