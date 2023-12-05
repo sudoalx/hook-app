@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
 
-const useCounter = (initialValue, maxValue) => {
+export const useCounter = (initialValue, maxValue) => {
     const [counter, setCounter] = useState(initialValue)
     const increment = (value = 1) => {
         setCounter(counter + value)
@@ -35,5 +35,3 @@ PropTypes.useCounterDefault = {
     initialValue: 1,
     maxValue: null
 }
-
-export default useCounter
