@@ -1,44 +1,10 @@
-import { useEffect, useReducer } from "react";
-import { todoReducer } from "./todoReducer";
+import { useTodos } from "../hooks/useTodos";
 import { TodoList } from "./components/TodoList";
 import { TodoAdd } from "./TodoAdd";
 
-const initialState = [];
-
 export const TodoApp = () => {
-  const init = () => {
-    return JSON.parse(localStorage.getItem("todos") || []);
-  };
-
-  const [todos, dispatchTodo] = useReducer(todoReducer, initialState, init);
-
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
-  const handleNewTodo = (newTodo) => {
-    const action = {
-      type: "[TODO] Add Todo",
-      payload: newTodo,
-    };
-    dispatchTodo(action);
-  };
-
-  const handleRemoveTodo = (todoId) => {
-    const action = {
-      type: "[TODO] Remove Todo",
-      payload: todoId,
-    };
-    dispatchTodo(action);
-  };
-
-  const handleToggleTodoStatus = (todoId) => {
-    const action = {
-      type: "[TODO] Toggle Todo",
-      payload: todoId,
-    };
-    dispatchTodo(action);
-  };
+  const { handleNewTodo, handleRemoveTodo, handleToggleTodoStatus, todos } =
+    useTodos();
 
   return (
     <>
