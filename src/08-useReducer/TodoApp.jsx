@@ -1,20 +1,9 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { todoReducer } from "./todoReducer";
 import { TodoList } from "./components/TodoList";
 import { TodoAdd } from "./TodoAdd";
 
-const initialState = [
-  {
-    id: new Date().getTime,
-    description: "Collect Soul Stone",
-    done: false,
-  },
-  {
-    id: new Date().getTime * 2,
-    description: "Collect Power Stone",
-    done: false,
-  },
-];
+const initialState = [];
 
 export const TodoApp = () => {
   const init = () => {
