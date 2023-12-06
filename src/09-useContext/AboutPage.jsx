@@ -4,7 +4,9 @@ export const AboutPage = () => {
       <h1>About this app</h1>
       <hr />
       <div className="container">
-        <p>This is a demo app to show the use of React Hooks.</p>
+        <p>
+          This is a demo app to show the use of React Hooks. It's super basic.
+        </p>
         <p>The app was created using:</p>
         <ul>
           <li>React</li>

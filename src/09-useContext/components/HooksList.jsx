@@ -197,6 +197,19 @@ export const HooksList = () => {
             TodoApp
           </Link>
         </li>
+        <li className="lead text-start fst-italic">
+          Source:{" "}
+          <a
+            className="text-decoration-none"
+            href={ghRepo + "/09-useContext/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          {" | "}
+          Demo: You are currently in the useContext demo
+        </li>
       </ul>
     </div>
   );
