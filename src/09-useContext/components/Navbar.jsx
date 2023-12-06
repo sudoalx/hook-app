@@ -5,7 +5,7 @@ export const Navbar = ({ pageName, base }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
       <div className="container-fluid">
-        <Link className="navbar-brand" to={base}>
+        <Link className="navbar-brand" to={"/"}>
           {pageName}
         </Link>
         <button
@@ -22,7 +22,7 @@ export const Navbar = ({ pageName, base }) => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className={"nav-link"} to={base}>
+              <NavLink className={"nav-link"} to={"/"}>
                 Home
               </NavLink>
             </li>
@@ -34,11 +34,6 @@ export const Navbar = ({ pageName, base }) => {
             <li className="nav-item">
               <NavLink className={"nav-link"} to={base + "/about"}>
                 About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className={"nav-link"} to={"/"}>
-                Back to main
               </NavLink>
             </li>
           </ul>
