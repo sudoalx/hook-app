@@ -1,11 +1,12 @@
+import propTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import "../../scss/styles.scss";
-export const Navbar = () => {
+export const Navbar = ({ pageName, base }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
       <div className="container-fluid">
-        <Link className="navbar-brand" to={"/"}>
-          useContext App
+        <Link className="navbar-brand" to={base}>
+          {pageName}
         </Link>
         <button
           className="navbar-toggler"
@@ -21,18 +22,23 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className={"nav-link"} to={"/"}>
+              <NavLink className={"nav-link"} to={base}>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={"nav-link"} to={"/login"}>
+              <NavLink className={"nav-link"} to={base + "/login"}>
                 Login
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={"nav-link"} to={"/about"}>
+              <NavLink className={"nav-link"} to={base + "/about"}>
                 About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={"nav-link"} to={"/"}>
+                Back to main
               </NavLink>
             </li>
           </ul>
@@ -40,4 +46,14 @@ export const Navbar = () => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  pageName: propTypes.string,
+  base: propTypes.string,
+};
+
+Navbar.defaultProps = {
+  pageName: "Hooks App",
+  base: "/",
 };

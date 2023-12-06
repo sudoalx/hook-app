@@ -6,13 +6,12 @@ import { UserProvider } from "./context/UserProvider";
 export const MainApp = () => {
   return (
     <UserProvider>
-      <Navbar />
+      <Navbar pageName={"useContext App"} base={"/useContext"} />
       <hr />
-
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/useContext" element={<HomePage />} />
+        <Route path="/useContext/about" element={<AboutPage />} />
+        <Route path="/useContext/login" element={<LoginPage />} />
         <Route path="*" element={<FourOhFour />} />
       </Routes>
     </UserProvider>
