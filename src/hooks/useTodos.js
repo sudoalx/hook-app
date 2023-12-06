@@ -5,7 +5,7 @@ export const useTodos = () => {
     const initialState = [];
 
     const init = () => {
-        return JSON.parse(localStorage.getItem("todos") || []);
+        return JSON.parse(localStorage.getItem("todos")) || initialState;
     };
 
     const [todos, dispatchTodo] = useReducer(todoReducer, initialState, init);
