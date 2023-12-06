@@ -30,6 +30,11 @@ export const MemoHook = () => {
       >
         Show/Hide {JSON.stringify(show)}
       </button>
+      <br />
+      <small>
+        Iterations function won't re-render when clicking show/hide button.
+        Check terminal.
+      </small>
     </>
   );
 };
