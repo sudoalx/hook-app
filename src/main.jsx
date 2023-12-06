@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./scss/styles.scss";
 import * as bootstrap from "bootstrap";
-import HooksApp from "./HooksApp";
+import { HooksApp } from "./HooksApp";
 import CounterApp from "./01-useState/CounterApp";
 import CounterWithCustomHook from "./01-useState/CounterWithCustomHook";
 import SimpleForm from "./02-useEffect/SimpleForm";

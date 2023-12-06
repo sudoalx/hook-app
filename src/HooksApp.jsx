@@ -1,6 +1,6 @@
 import React from "react";
 
-const HooksApp = () => {
+export const HooksApp = () => {
   return (
     <div>
       <h1>Hooks App</h1>
@@ -8,5 +8,3 @@ const HooksApp = () => {
     </div>
   );
 };
-
-export default HooksApp;
