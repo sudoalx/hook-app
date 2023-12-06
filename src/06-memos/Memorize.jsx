@@ -22,6 +22,11 @@ export const Memorize = () => {
       >
         Show/Hide {JSON.stringify(show)}
       </button>
+      <br />
+      <small>
+        Counter won't be re-rendered when clicking the show/hide button. Check
+        terminal.
+      </small>
     </>
   );
 };
