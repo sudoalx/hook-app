@@ -73,8 +73,8 @@ export const Card = ({
           />
         </div>
       </div>
+      useRef test (species name size):
       <code> {JSON.stringify(boxSize)} </code>
-
       <SkipValues
         decreaseValue={decreaseValue}
         increaseValue={increaseValue}
