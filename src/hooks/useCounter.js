@@ -11,9 +11,6 @@ export const useCounter = (initialValue = 1, maxValue) => {
     }
     const decrement = (value = 1) => {
         setCounter(counter - value)
-        if (counter - value < initialValue) {
-            reset()
-        }
     }
     const reset = (value = 1) => {
         setCounter(value)
