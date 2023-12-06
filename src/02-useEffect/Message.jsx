@@ -15,7 +15,7 @@ const Message = () => {
   }, []);
   return (
     <>
-      <h3>Usuario ya existe</h3>
+      <h3>Username already exists</h3>
       {JSON.stringify(coords)}
     </>
   );

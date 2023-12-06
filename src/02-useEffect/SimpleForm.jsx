@@ -17,22 +17,6 @@ const SimpleForm = () => {
     });
   };
 
-  useEffect(() => {
-    // console.log("useEffect called");
-  }, []);
-
-  useEffect(() => {
-    // console.log("Form changed");
-  }, [formState]);
-
-  useEffect(() => {
-    // console.log("Username changed");
-  }, [username]);
-
-  useEffect(() => {
-    // console.log("Email changed");
-  }, [email]);
-
   return (
     <>
       <h1>Simple Form</h1>
