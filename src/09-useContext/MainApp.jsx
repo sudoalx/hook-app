@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import { AboutPage, HomePage, LoginPage, FourOhFour } from "./";
 import { Navbar } from "./components/Navbar";
+import { UserProvider } from "./context/UserProvider";
 
 export const MainApp = () => {
   return (
-    <>
+    <UserProvider>
       <Navbar />
       <hr />
 
@@ -14,6 +15,6 @@ export const MainApp = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<FourOhFour />} />
       </Routes>
-    </>
+    </UserProvider>
   );
 };
