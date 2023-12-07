@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
-import "../../scss/styles.scss";
+
 export const Navbar = ({ pageName, base }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
