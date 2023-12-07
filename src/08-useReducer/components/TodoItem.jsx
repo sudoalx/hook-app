@@ -16,11 +16,18 @@ export const TodoItem = ({ todo, onRemoveTodo, onToggleTodoStatus }) => {
       tabIndex={0}
       className={`list-group-item d-flex justify-content-between align-items-center bg-dark text-white`}
     >
-      <span className={`text-decoration-${done ? "line-through" : "none"}`}>
+      <span
+        className={`text-decoration-${done ? "line-through" : "none"}`}
+        aria-label="description"
+      >
         {description}
       </span>
       <div className="btn-group">
-        <button className="btn btn-danger" onClick={() => onRemoveTodo?.(id)}>
+        <button
+          className="btn btn-danger"
+          onClick={() => onRemoveTodo?.(id)}
+          aria-label="remove"
+        >
           🗑
         </button>
       </div>
