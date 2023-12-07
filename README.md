@@ -1,4 +1,4 @@
-# Hook App
+# Hooks App
 
 ## Description
 
