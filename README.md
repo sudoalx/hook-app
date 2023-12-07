@@ -15,4 +15,7 @@ yarn install
 ```bash
 yarn dev
 ```
-# react-custom-hooks
+
+## react-custom-hooks
+
+Separate repository with custom hooks used here: [react-custom-hooks](https://github.com/sudoalx/react-custom-hooks)
